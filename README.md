@@ -22,3 +22,9 @@ k3d cluster delete democluster
 k3d cluster list
 
 k3d cluster  start democluster
+
+
+#### nginx
+
+kubectl create deployment nginx --image=nginx
+kubectl create service nodeport nginx --tcp=80:80
