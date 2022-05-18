@@ -14,6 +14,9 @@ spec:
     spec:
       containers:
       - name: create-react-demo
-        image: tmacshit1/create-react-demo:1.2
+        image: registry.cn-hangzhou.aliyuncs.com/sdm-dev/create-react-demo:1.2
         ports:
         - containerPort: 80
+      imagePullSecrets:
+      - name: regcred      
+          
