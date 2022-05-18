@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: create-react-demo
+spec:
+  selector:
+    matchLabels:
+      app: create-react-demo
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: create-react-demo
+    spec:
+      containers:
+      - name: create-react-demo
+        image: tmacshit1/create-react-demo:1.1
+        ports:
+        - containerPort: 80
