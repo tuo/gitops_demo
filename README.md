@@ -46,3 +46,19 @@ k3d cluster  start democluster
     open localhost:8080 login with `admin` and password
 
 
+argocd application yaml: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/application.yaml
+https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/
+
+    k apply -f argocd_application.yaml
+
+
+#### Argo Update
+
+    k port-forward svc/create-react-demo -n create-react-demo   8081:80
+    http://localhost:8081/
+    show version 1.1
+
+    then update deployment.yaml with new image tag v1.2
+
+    http://localhost:8081/
+    show version 1.2

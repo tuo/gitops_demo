@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: create-react-demo
-        image: tmacshit1/create-react-demo:1.1
+        image: tmacshit1/create-react-demo:1.2
         ports:
         - containerPort: 80

@@ -1,0 +1,28 @@
+#full yaml check: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/application.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cra-argo-application
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/tuo/k3d_demo.git
+    targetRevision: HEAD
+    path: config_dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: create-react-demo #where ns we're gonna run, create if not exist
+
+  #https://argo-cd.readthedocs.io/en/stable/user-guide/auto_sync/
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    
+    automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.      
+      # By default, changes that are made to the live cluster will not trigger automated sync.
+      selfHeal: true  #sync with config with current cluster status
+    
+      prune: true #delete resources not used
+
+
