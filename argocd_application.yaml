@@ -7,7 +7,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/tuo/k3d_demo.git
+    repoURL: https://github.com/tuo/gitops_demo.git
     targetRevision: HEAD
     path: config_dev
   destination:
