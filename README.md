@@ -62,3 +62,9 @@ https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/
 
     http://localhost:8081/
     show version 1.2
+
+<img width="1394" alt="step1" src="https://user-images.githubusercontent.com/491610/168952137-0d69c03d-44a4-46ca-82eb-f071305309cd.png">
+
+<img width="1400" alt="step2" src="https://user-images.githubusercontent.com/491610/168952134-f55bef6c-4ddd-4081-95e0-f928cab283d5.png">
+
+<img width="1440" alt="step3" src="https://user-images.githubusercontent.com/491610/168952129-a4f92126-ef6d-4093-a92f-c8cb42291614.png">
