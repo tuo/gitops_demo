@@ -1,3 +1,5 @@
+## K3D
+
 Just start with Docker Desktop:
 
     k3d cluster create --config democluster.yaml
@@ -24,7 +26,23 @@ k3d cluster list
 k3d cluster  start democluster
 
 
-#### nginx
+## Argo
 
-kubectl create deployment nginx --image=nginx
-kubectl create service nodeport nginx --tcp=80:80
+* setup argo: [https://argo-cd.readthedocs.io/en/stable/getting_started/#1-install-argo-cd](https://argo-cd.readthedocs.io/en/stable/getting_started/#1-install-argo-cd)
+
+    kubectl create namespace argocd
+    kubens argocd
+
+    
+    kubectl apply   -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+ 
+
+    k get pods --watch 
+    k port-forward svc/argocd-server 8080:443 
+    k get secret argocd-initial-admin-secret -o yaml
+    base64 decode the password
+
+    open localhost:8080 login with `admin` and password
+
+
