@@ -17,3 +17,8 @@ spec:
         image: tmacshit1/create-react-demo:1.2
         ports:
         - containerPort: 80
+        env:
+        - name: POD_RUNING_IP
+          valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
